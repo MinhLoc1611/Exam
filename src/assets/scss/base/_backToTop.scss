@@ -1,0 +1,16 @@
+.back-to-top{
+    position: fixed;
+    bottom: 10%;
+    right: 0;
+    font-size: 14px;
+    cursor: pointer;
+    background:none;
+    border: none;
+    letter-spacing: 2px;
+    transform: rotate(90deg)
+}
+@include responsive('small'){
+    .back-to-top{
+        display: none;
+    }
+}

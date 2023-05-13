@@ -1,0 +1,69 @@
+.header {
+    background-color: rgba(255,255,255,0.8);
+    z-index: 20;
+    position: fixed;
+    width: 100%;
+    .navbar {
+        .header_rightTop {
+            margin-bottom: 10px;
+            li {
+                font-size: 14px;
+                color: $color-green-1;
+                cursor: pointer;
+                padding: 0 10px 0;
+                border-left: 1px black solid;
+                transition-duration: 0.5s;
+                &:hover {
+                    color: #93b1aa;
+                }
+                &:first-child {
+                    border-left: none;
+                }
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+        .header_rightBot {
+            li {
+                position: relative;
+                color: $color-green-1;
+                cursor: pointer;
+                margin: 0 15px 0;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: 2px;
+                    width: 0;
+                    background: $color-green-1;
+                    display: block;
+                    transition: 0.5s;
+                    margin-top: 16px;
+                }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+        @include responsive("large"){
+            .header_rightTop{
+                margin-top: 15px;
+            }
+        }
+        @include responsive("medium"){
+            .header_rightTop{
+                li{
+                    font-size: 12px;
+                }
+            }
+            .header_rightBot{
+                li{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

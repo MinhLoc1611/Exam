@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Carousel from "./Components/Carousel";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import Intro from "./Components/Intro";
+import LogoCompany from "./Components/LogoCompany";
+import './assets/scss/style.scss'
+
 
 function App() {
+
+    const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 200) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    });
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header/>
+      <Carousel/>
+      <Intro/>
+      <LogoCompany/>
+      <Footer/>
+      {showButton && (
+        <button onClick={scrollToTop} className="back-to-top text-white">
+          <i className="fa fa-angle-left"></i> PAGE TOP
+        </button>
+      )}
+    </>
   );
 }
 

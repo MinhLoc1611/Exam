@@ -1,0 +1,35 @@
+.carousel_section{
+    height: 100vh;
+    .carousel_div {
+        height: 80vh;
+        position: relative;
+        .carousel_info {
+            position: absolute;
+            top: 20%;
+            left: 2%;
+            width: 96%;
+            .carousel-inner{
+                .carousel-item{
+                    img{
+                        border-radius: 20px;
+                    }
+                }
+            }
+        }
+    }
+    @include responsive('large'){
+        .carousel_div{
+            height: 90vh;
+        }
+    }
+}
+@include responsive('medium'){
+    .carousel_section{
+        height: 80vh;
+    }
+}
+@include responsive('small'){
+    .carousel_section{
+        height: 70vh;
+    }
+}

@@ -1,0 +1,20 @@
+.logo_section{
+    .logo_item{
+        img{
+            width: 160px;
+            height: 120px;
+        }
+    }
+    .slick-slider{
+        .slick-dots{
+            top: -25%;
+            text-align: end;
+            right: 10% !important;
+        }
+    }
+    @include responsive('large'){
+        h2{
+            text-align: center;
+        }
+    }
+}
